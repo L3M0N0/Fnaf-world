@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FNaF World — Fan Project</title>
+<style>
+:root{--bg:#030a1c;--panel:#07152b;--line:#0879df;--cyan:#65d5ff;--text:#d7efff;--muted:#8cb7d9}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 50% 0,#0b3470 0,#06142b 38%,#020611 100%);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px clamp(16px,4vw,48px);border-bottom:1px solid #123d6e;background:#030a1ceF;position:sticky;top:0}
+.logo{font-weight:900;font-size:clamp(18px,3vw,29px);line-height:1.05;font-style:italic;color:white;text-shadow:0 0 12px #168bff}
+.logo span{display:block;font-size:1.35em;letter-spacing:.08em;background:linear-gradient(90deg,#ff3737,#ffcb28,#38e76b,#25baff,#c66cff);color:transparent;background-clip:text}
+nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:var(--cyan);text-decoration:none;font-weight:650}nav a:hover{text-decoration:underline}
+.tag{font-size:13px;color:var(--muted);max-width:190px}
+main{max-width:1250px;margin:26px auto;padding:0 18px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:18px}
+.panel{background:linear-gradient(150deg,#071a33,#030b1b);border:1px solid #0968c2;border-radius:14px;box-shadow:0 0 25px #006bff15}
+aside{padding:20px}h2{color:var(--cyan);font-size:18px;margin:0 0 8px;letter-spacing:.04em}p{margin:0 0 14px}hr{border:0;border-top:1px solid #14528c;margin:18px 0}
+.game-wrap{padding:12px}
+.game-screen{min-height:420px;aspect-ratio:16/9;border:1px solid #1768c7;border-radius:8px;display:grid;place-items:center;text-align:center;padding:clamp(18px,4vw,48px);background:radial-gradient(ellipse at 50% 25%,#1559a1,#08274e 55%,#030b1b 100%);position:relative;overflow:hidden}
+.stars{position:absolute;inset:0;opacity:.25;background-image:radial-gradient(#b9eaff 1px,transparent 1px);background-size:35px 35px}
+.game-content{position:relative;max-width:600px}
+h1{font-size:clamp(28px,5vw,54px);line-height:1.05;margin:0;text-shadow:0 3px 0 #a90018,0 0 18px #3ba9ff}
+.world{font-size:clamp(42px,8vw,88px);font-weight:1000;letter-spacing:.08em;line-height:1.1;margin:0 0 18px;background:linear-gradient(90deg,#ff3838,#ffd329,#35ec6d,#21baff,#c66cff);color:transparent;background-clip:text;text-shadow:none}
+.subtitle{color:#c1e7ff;margin:0 auto 24px}
+.notice{border:1px solid #1c5c98;background:#03142b;padding:12px;border-radius:10px;text-align:left;font-size:14px;color:#badcf4;margin:18px 0}
+button{cursor:pointer;border:1px solid #1685ff;border-radius:9px;color:white;background:linear-gradient(#0753ad,#03255b);padding:12px 20px;font-weight:800;font-size:16px;box-shadow:0 0 14px #087aff35}
+button:hover{filter:brightness(1.2)}button:focus-visible,a:focus-visible{outline:3px solid #ffe56e;outline-offset:3px}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.small{font-size:13px;color:var(--muted)}
+footer{text-align:center;padding:10px 16px 28px;color:#7eadd8;font-size:13px}
+#status{min-height:24px;margin-top:12px;color:#ffe78a}
+@media(max-width:760px){header{align-items:flex-start;flex-direction:column}main{grid-template-columns:1fr}aside{order:2}.game-screen{min-height:330px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Five Nights at Freddy’s <span>WORLD</span></div>
+  <nav aria-label="Main navigation"><a href="#home">Home</a><a href="#game">Game Screen</a><a href="#about">About</a><a href="#credits">Credits</a></nav>
+  <div class="tag">An unofficial fan-site concept</div>
+</header>
+<main id="home">
+  <aside class="panel" id="about">
+    <h2>ABOUT</h2>
+    <p>FNaF World is a role-playing game created by Scott Cawthon. This page is a fan-made website shell.</p>
+    <hr>
+    <h2 id="credits">CREDITS</h2>
+    <p>Original game and characters: Scott Cawthon and the respective rights holders.</p>
+    <p class="small">Unofficial fan project. Not affiliated with or endorsed by the rights holders.</p>
+    <hr>
+    <h2>IMPORTANT</h2>
+    <p>This page does not contain the original game files. The game area is a placeholder until an authorized, browser-compatible build is available.</p>
+    <hr>
+    <p><em>Thanks for visiting! — A fan</em></p>
+  </aside>
+  <section class="panel game-wrap" id="game" aria-label="Game area">
+    <div class="game-screen">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="game-content">
+        <h1>FIVE NIGHTS AT FREDDY’S</h1>
+        <div class="world">WORLD</div>
+        <p class="subtitle">A browser game area — ready for a permitted, compatible build.</p>
+        <div class="notice"><strong>Game not loaded</strong><br>This is the website shell, not the playable original game. A Windows .exe or installer cannot run directly inside this webpage.</div>
+        <div class="actions">
+          <button id="play">Check game status</button>
+          <button id="fullscreen">Fullscreen</button>
+        </div>
+        <div id="status" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <p class="small" style="padding:10px 4px 0">Tip: this layout works on phones and computers. The original game still needs a lawful browser-compatible build.</p>
+  </section>
+</main>
+<footer>FNaF World fan-site shell · No original game files included · Not an official website</footer>
+<script>
+const status = document.getElementById('status');
+document.getElementById('play').addEventListener('click', () => {
+  status.textContent = 'No game is attached yet. Add an authorized HTML5/browser build here when one is available.';
+});
+document.getElementById('fullscreen').addEventListener('click', async () => {
+  const target = document.querySelector('.game-screen');
+  try {
+    if (!document.fullscreenElement) await target.requestFullscreen();
+    else await document.exitFullscreen();
+  } catch (e) { status.textContent = 'Fullscreen is not available in this browser.'; }
+});
+</script>
+</body>
+</html>
